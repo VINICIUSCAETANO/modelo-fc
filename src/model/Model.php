@@ -4,6 +4,6 @@ class Model
     public $string;
 
     public function __construct() {
-        $this->string = "MVC";
+        $this->string = "Clique aqui";
     }
 }

@@ -13,3 +13,20 @@
         <link href="https://fonts.googleapis.com/css2?family=Signika:wght@300&display=swap" rel="stylesheet">   
     </header>
 </html>
+<body>
+<?php
+    require 'src/controller/Controller.php';
+    require 'src/model/Model.php';
+    require 'src/view/View.php';
+
+    $model = new Model();
+    $controller = new Controller($model);
+    $view = new View($controller, $model);
+    
+    if (isset($_GET['action']) && !empty($_GET['action'])) {
+        $controller->{$_GET['action']}();
+    }
+    
+    echo $view->output();
+?>
+</body>
