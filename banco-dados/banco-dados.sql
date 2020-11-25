@@ -1,7 +1,7 @@
 
 
 # É recomendado que a a estrutura e os dados de exemplos estajam nessa pasta
-DROP TABLE IF EXISTS medicos
+DROP TABLE IF EXISTS medicos;
 
 CREATE TABLE IF NOT EXISTS medicos (
     id INT NOT NULL AUTO_INCREMENT,
@@ -13,9 +13,11 @@ CREATE TABLE IF NOT EXISTS medicos (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS Horario (
+DROP TABLE IF EXISTS horarios;
+
+CREATE TABLE IF NOT EXISTS horarios (
     id INT NOT NULL AUTO_INCREMENT,
-    id_medico INT UNSIGNED NOT NULL,
+    id_medico INT NOT NULL,
     data_horario DATETIME,
     horario_agendado TINYINT(1),
     data_criacao TIMESTAMP DEFAULT CURRENT_TIMESTAMP ,
